@@ -1,78 +1,174 @@
 body {
   background: $white;
   font-family: $primary-font-family, sans-serif;
-  font-size: 88px;
-  line-height: 88px;
   color: $black;
-  padding: 80px;
   overflow-x: hidden;
   font-feature-settings: "case" on;
 }
 
-p {
-  margin-top: 80px;
-  letter-spacing: -4px;
+.waitlist_section-spacing {
+  padding-top: 10em;
+  padding-left: 2em;
+  padding-bottom: 1.5em;
 }
 
-.cta {
-  background: $black;
-  padding: 12px 32px 20px 32px;
-  border-radius: 80px;
-  color: #fff;
-  position: fixed;
-  right: 40px;
-  bottom: 40px;
-  height: 54px;
-  font-size: $h3-font-size;
-  line-height: normal;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.2s ease-in-out;
-  &:hover {
-    // opacity: 0.5;
-    background-color: $dark-purple;
-    transition: all 0.2s ease-in-out;
-    border: 1px solid $dark-purple;
+.heading-style-h2 {
+  font-size: $h1-font-size;
+}
+.waitlist_layout-wrapper {
+  display: -ms-grid;
+  display: grid;
+  min-height: 640px;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 2em;
+  grid-row-gap: 3.125em;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+  font-size: 1em;
+}
+
+.waitlist_content-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.waitlist_googles-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.waitlist_googles {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.form-wrapper {
+  max-width: 34em;
+  min-height: 13em;
+  margin-bottom: 2em;
+}
+
+.form {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 1.875em;
+  grid-row-gap: 1.875em;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+}
+
+.input {
+  height: 2.5em;
+  margin-bottom: 0px;
+  padding: 10px;
+  border-style: solid;
+  border-width: 0px 0px 1px;
+  border-color: #000 #000 #003f3c;
+  border-radius: 0px;
+  background-color: transparent;
+  font-size: 1em;
+}
+
+.success {
+  padding: 0px;
+  background-color: transparent;
+  text-align: left;
+}
+
+.error {
+  background-color: $white;
+}
+
+.success-animation-wrap {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  background-color: $white;
+  opacity: 0;
+}
+
+.waitlist_form-succes-animation {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.form {
+  .success,
+  .waitlist_form-error-w-form-fail {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px 20px;
+    max-width: 400px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    &.show {
+      display: block;
+    }
   }
-}
-
-h3 {
-  font-size: $h3-font-size;
-  line-height: $h3-line-height;
-  font-weight: 500;
-  color: $black;
-  margin-top: 20px;
-}
-.footer {
-  margin-top: 80px;
-  font-size: 16px;
-  line-height: 16px;
-  letter-spacing: normal;
-  color: #aab1b8;
+  .success {
+    color: $green;
+  }
+  .waitlist_form-error {
+    color: $red;
+  }
 }
 
 @media only screen and (max-width: 1280px) {
-  p {
-    font-size: 56px;
-    line-height: 56px;
-    letter-spacing: -2px;
-  }
-  h3 {
-    font-size: 56px;
-    line-height: 56px;
-    letter-spacing: -2px;
-  }
 }
 @media only screen and (max-width: 1024px) {
   body {
     padding: 32px;
     overflow-x: hidden;
-  }
-
-  .c2a {
-    width: calc(100vw - 144px);
-    text-align: center;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
   }
 }

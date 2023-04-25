@@ -1,5 +1,5 @@
 .button {
-  padding: 12px 32px 20px 32px;
+  padding: 12px 32px 12px 32px;
   border-radius: 80px;
   color: #fff;
   font-size: $p-font-size;
@@ -10,7 +10,7 @@
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   &:hover {
-    background-color: #090940;
+    background-color: #760a8c;
   }
 }
 .primary-button {
